@@ -2,35 +2,39 @@
 @model DatabaseFirstApproach.Pages.Genders.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "List Of Genders";
 }
 
-<h1>Index</h1>
+<h1 class="text-info">List Of Genders</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TblGender[0].Sex)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.TblGender) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<hr />
+<div class="row">
+    <div class="ml-auto mb-2 mr-3"><a asp-page="Create" class="btn btn-outline-primary">Create new gender</a></div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblGender[0].Sex)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TblGender)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm mb-2">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm mb-2">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm mb-2">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
