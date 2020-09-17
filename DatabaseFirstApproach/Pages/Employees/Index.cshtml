@@ -10,7 +10,7 @@
 </h1>
 <hr />
 <div class="row">
-    <div class="ml-auto mb-2"><a asp-page="Create" class="btn btn-outline-primary">Create New Employee</a></div>
+    <div class="ml-auto mb-2 mr-3"><a asp-page="Create" class="btn btn-outline-primary">Create new employee</a></div>
 </div>
 
 <div class="table-responsive">
@@ -46,7 +46,7 @@
                         @item.Email
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Salary)
+                        @item.Salary.Value.ToString("c")
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Department.DepartmentName)
@@ -57,7 +57,7 @@
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.EmployeeId" class="btn btn-outline-primary btn-sm mb-2">Edit</a>
                         <a asp-page="./Details" asp-route-id="@item.EmployeeId" class="btn btn-outline-info btn-sm mb-2">Details</a>
-                        <a asp-page="./Delete" asp-route-id="@item.EmployeeId" class="btn btn-outline-danger btn-sm">Delete</a>
+                        <a asp-page="./Delete" asp-route-id="@item.EmployeeId" class="btn btn-outline-danger btn-sm mb-2">Delete</a>
                     </td>
                 </tr>
             }
