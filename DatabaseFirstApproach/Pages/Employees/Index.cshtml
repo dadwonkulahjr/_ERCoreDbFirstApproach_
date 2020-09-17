@@ -1,0 +1,66 @@
+﻿@page
+@model DatabaseFirstApproach.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "List Of Employees";
+}
+
+<h1 class="text-info">
+    List Of Employees
+</h1>
+<hr />
+<div class="row">
+    <div class="ml-auto mb-2"><a asp-page="Create" class="btn btn-outline-primary">Create New Employee</a></div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblEmployees[0].Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblEmployees[0].Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblEmployees[0].Salary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblEmployees[0].Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblEmployees[0].Gender)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TblEmployees)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender.Sex)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.EmployeeId" class="btn btn-outline-primary btn-sm mb-2">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.EmployeeId" class="btn btn-outline-info btn-sm mb-2">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.EmployeeId" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,67 @@
+﻿@page
+@model DatabaseFirstApproach.Pages.Employees.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-info">Create new employee</h1>
+<hr />
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row form-group">
+        <label asp-for="TblEmployees.Name" class="control-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="TblEmployees.Name" class="form-control" />
+            <span asp-validation-for="TblEmployees.Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label asp-for="TblEmployees.Email" class="control-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="TblEmployees.Email" class="form-control" />
+            <span asp-validation-for="TblEmployees.Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label asp-for="TblEmployees.GenderId" class="control-label col-md-2"></label>
+        <div class="col-sm-10">
+            <select asp-for="TblEmployees.GenderId" class="form-control" asp-items="ViewBag.GenderId">
+                <option value="">Select gender</option>
+            </select>
+            <span class="text-danger" asp-validation-for="TblEmployees.GenderId"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label asp-for="TblEmployees.DepartmentId" class="control-label col-md-2"></label>
+        <div class="col-sm-10">
+            <select asp-for="TblEmployees.DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId">
+                <option value="">Select department</option>
+            </select>
+            <span class="text-danger" asp-validation-for="TblEmployees.DepartmentId"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label asp-for="TblEmployees.Salary" class="control-label col-md-2"></label>
+        <div class="col-sm-10">
+            <input asp-for="TblEmployees.Salary" class="form-control" />
+            <span asp-validation-for="TblEmployees.Salary" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-10">
+            <input type="submit" value="Create" class="btn btn-success" />
+            <a asp-page="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</form>
+
+
+
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
