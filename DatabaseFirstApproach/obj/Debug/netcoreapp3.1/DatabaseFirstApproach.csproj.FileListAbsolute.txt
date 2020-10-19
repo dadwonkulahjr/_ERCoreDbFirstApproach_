@@ -489,3 +489,4 @@ C:\Users\Dad S. Wonkulah Jr\source\repos\EFCoreDbFirstApproach\DatabaseFirstAppr
 C:\Users\Dad S. Wonkulah Jr\source\repos\EFCoreDbFirstApproach\DatabaseFirstApproach\obj\Debug\netcoreapp3.1\Razor\Pages\AspNetUserTokens\Details.cshtml.g.cs
 C:\Users\Dad S. Wonkulah Jr\source\repos\EFCoreDbFirstApproach\DatabaseFirstApproach\obj\Debug\netcoreapp3.1\Razor\Pages\AspNetUserTokens\Edit.cshtml.g.cs
 C:\Users\Dad S. Wonkulah Jr\source\repos\EFCoreDbFirstApproach\DatabaseFirstApproach\obj\Debug\netcoreapp3.1\Razor\Pages\AspNetUserTokens\Index.cshtml.g.cs
+C:\Users\Dad S. Wonkulah Jr\source\repos\EFCoreDbFirstApproach\DatabaseFirstApproach\obj\Debug\netcoreapp3.1\Razor\Pages\ErrorHandler\PageNotFound.cshtml.g.cs

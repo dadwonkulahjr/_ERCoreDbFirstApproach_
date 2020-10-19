@@ -12,9 +12,9 @@ namespace DatabaseFirstApproach.Pages.Employees
 {
     public class EditModel : PageModel
     {
-        private readonly DatabaseFirstApproach.Models.tuseTheProgrammer_TestDbContext _context;
+        private readonly tuseTheProgrammer_TestDbContext _context;
 
-        public EditModel(DatabaseFirstApproach.Models.tuseTheProgrammer_TestDbContext context)
+        public EditModel(tuseTheProgrammer_TestDbContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace DatabaseFirstApproach.Pages.Employees
 
             if (TblEmployees == null)
             {
-                return NotFound();
+                return RedirectToPage("/ErrorHandler/PageNotFound");
             }
            ViewData["DepartmentId"] = new SelectList(_context.TblDepartment, "Id", "DepartmentName");
            ViewData["GenderId"] = new SelectList(_context.TblGender, "Id", "Sex");

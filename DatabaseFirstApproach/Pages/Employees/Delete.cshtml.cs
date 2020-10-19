@@ -34,7 +34,7 @@ namespace DatabaseFirstApproach.Pages.Employees
 
             if (TblEmployees == null)
             {
-                return NotFound();
+              return RedirectToPage("/ErrorHandler/PageNotFound");
             }
             return Page();
         }

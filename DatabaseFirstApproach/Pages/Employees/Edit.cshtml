@@ -29,14 +29,14 @@
     <div class="row form-group">
         <label asp-for="TblEmployees.GenderId" class="control-label col-md-2"></label>
         <div class="col-sm-10">
-            <select asp-for="TblEmployees.GenderId" class="form-control" asp-items="ViewBag.GenderId"></select>
+            <select asp-for="TblEmployees.GenderId" class="custom-select" asp-items="ViewBag.GenderId"></select>
             <span asp-validation-for="TblEmployees.GenderId" class="text-danger"></span>
         </div>
     </div>
     <div class="row form-group">
         <label asp-for="TblEmployees.DepartmentId" class="control-label col-md-2"></label>
         <div class="col-sm-10">
-            <select asp-for="TblEmployees.DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId"></select>
+            <select asp-for="TblEmployees.DepartmentId" class="custom-select" asp-items="ViewBag.DepartmentId"></select>
             <span asp-validation-for="TblEmployees.DepartmentId" class="text-danger"></span>
         </div>
     </div>

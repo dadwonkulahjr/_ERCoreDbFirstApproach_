@@ -11,9 +11,9 @@ namespace DatabaseFirstApproach.Pages.Genders
 {
     public class DetailsModel : PageModel
     {
-        private readonly DatabaseFirstApproach.Models.tuseTheProgrammer_TestDbContext _context;
+        private readonly tuseTheProgrammer_TestDbContext _context;
 
-        public DetailsModel(DatabaseFirstApproach.Models.tuseTheProgrammer_TestDbContext context)
+        public DetailsModel(tuseTheProgrammer_TestDbContext context)
         {
             _context = context;
         }
@@ -31,7 +31,7 @@ namespace DatabaseFirstApproach.Pages.Genders
 
             if (TblGender == null)
             {
-                return NotFound();
+                return RedirectToPage("/Error");
             }
             return Page();
         }

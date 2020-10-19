@@ -32,7 +32,7 @@ namespace DatabaseFirstApproach.Pages.Genders
 
             if (TblGender == null)
             {
-                return NotFound();
+                return RedirectToPage("/ErrorHandler/PageNotFound");
             }
             return Page();
         }

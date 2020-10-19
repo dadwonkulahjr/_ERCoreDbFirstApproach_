@@ -31,7 +31,7 @@ namespace DatabaseFirstApproach.Pages.Departments
 
             if (TblDepartment == null)
             {
-                return NotFound();
+                return RedirectToPage("/ErrorHandler/PageNotFound");
             }
             return Page();
         }
